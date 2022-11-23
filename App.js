@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View,Image, Dimensions } from 'react-native'
 import React, { useState } from 'react'
 
 
@@ -8,14 +8,19 @@ import Tabnavigation from './src/navigation/Tabnavigation';
 
 //introapp imports here 
 import AppIntroSlider from 'react-native-app-intro-slider';
+import SplashScreen from 'react-native-splash-screen'
 
 
-
-
+const window = Dimensions.get("window");
+const screen = Dimensions.get("screen");
 
 const App = () => {
 
-  const [realshow , setRealshow] = useState(false);
+  setTimeout(() => {
+    SplashScreen.hide();
+  }, 500);
+
+  const [realshow , setRealshow] = useState(true);
   
   const On_done =()=>{
     setRealshow(false);
@@ -27,7 +32,7 @@ const App = () => {
       title: 'Title 1',
       text: 'Description.\nSay something cool',
       image: require('./src/asource/1.jpg'),
-      backgroundColor: '#59b2ab',
+      backgroundColor: '#1c3857',
     },
     {
       key: 2,
@@ -47,24 +52,32 @@ const App = () => {
 
   const renderSlide = ({item})=>{
      return (
-      <View>
-        <Text>{item.title}</Text>
-      </View>
+      <View style={{backgroundColor:item.backgroundColor,height:screen.height}}>
+      <Text style={styles.title}>{item.title}</Text>
+      <Image source={item.image}  />
+      <Text style={styles.text}>{item.text}</Text>
+    </View>
      )
   }
 
+ 
+if(realshow){
   return(
-   <ScrollView>
-    <View>
-      {realshow ? <AppIntroSlider /> : <Main/>  }
-    </View>
-   </ScrollView>
+    <AppIntroSlider 
+    data={slides} 
+    renderItem={renderSlide}
+    onDone={On_done}
+    />
+  )
+}else{
+  return(
+    <Main_application/>
   )
 }
+ 
+}
 
-export default App
-
-const Main = () => {
+const Main_application =()=>{
   return(
     <NavigationContainer>
     <Tabnavigation/>
@@ -73,6 +86,12 @@ const Main = () => {
   )
 }
 
+export default App
 
 
-const styles = StyleSheet.create({})
+
+
+
+const styles = StyleSheet.create({
+
+})
