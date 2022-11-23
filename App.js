@@ -29,22 +29,22 @@ const App = () => {
   const slides = [
     {
       key: 1,
-      title: 'Title 1',
-      text: 'Description.\nSay something cool',
+      title: 'Global eNetworks Ltd.',
+      text: 'fast and very trustable company by indian navy , army',
       image: require('./src/asource/1.jpg'),
       backgroundColor: '#1c3857',
     },
     {
       key: 2,
-      title: 'Title 2',
-      text: 'Other cool stuff',
+      title: 'Now open to work for public sector ',
+      text: 'We provides small services for offices and Homes ',
       image: require('./src/asource/1.jpg'),
       backgroundColor: '#febe29',
     },
     {
       key: 3,
-      title: 'Rocket guy',
-      text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
+      title: 'Software / hardware Troubleshootings services',
+      text: 'Now ready to solve your hardship ',
       image: require('./src/asource/1.jpg'),
       backgroundColor: '#22bcb5',
     }
@@ -54,7 +54,7 @@ const App = () => {
      return (
       <View style={{backgroundColor:item.backgroundColor,height:screen.height}}>
       <Text style={styles.title}>{item.title}</Text>
-      <Image source={item.image}  />
+      <Image source={item.image} style={styles.image} />
       <Text style={styles.text}>{item.text}</Text>
     </View>
      )
@@ -93,5 +93,21 @@ export default App
 
 
 const styles = StyleSheet.create({
-
+  image:{
+    width:350,
+    alignSelf:'center',
+    height:300,
+  },
+  title:{
+    fontSize:30,
+    alignSelf:'center',
+    color:'white',
+    margin:40
+  },
+  text:{
+      fontSize:30,
+      alignSelf:'center',
+      color:'white',
+      margin:40
+  }
 })
