@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Servica = ({name, color}) => {
+const Servica = ({name, color,price}) => {
   return (
     <View style={{ 
         width:null,
@@ -11,6 +11,19 @@ const Servica = ({name, color}) => {
         margin:5,
         }}>
           <Text style={styles.box_text}>{name}</Text>
+          <View style={{
+            width:120,
+            height:45,
+            backgroundColor:'skyblue',
+            borderRadius:15
+          }}>
+            <Text style={{
+              fontSize:18,
+              fontWeight:'600',
+              color:'black',
+              padding:8,
+            }}>Price: {price} {'\u20B9'}   </Text>
+          </View>
         </View>
   )
 }

@@ -13,6 +13,8 @@ import Prints_delivery from '../service_category/Prints_delivery';
 import Digital_help from '../service_category/Digital_help';
 import See_all from '../service_category/See_all';
 import See_al from '../trending_service/See_al';
+import Register from '../Signup/Register';
+import Login from '../Signup/Login';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,7 +39,8 @@ const Navigation = () => {
       <Stack.Screen name="Digital_help" component={Digital_help} />
       <Stack.Screen name="See_all" component={See_all} />
       <Stack.Screen name="See_al" component={See_al} />
-     
+      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="Login" component={Login} />
       
     </Stack.Navigator>
   )

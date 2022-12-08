@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
 const Line=()=>{
   return
 }
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
     <View>
      <View style={styles.textvox}>
@@ -27,16 +27,17 @@ const Profile = () => {
      </View>
      <View style={{
       width:'100%',
-      backgroundColor:'white'
+      
      }}>
-      <Text>About App</Text>
+      <Text style={styles.text}>About App</Text>
+      <Text style={styles.text}>Share App</Text>
+      <Text style={styles.text}>Rate App</Text>
+      <TouchableOpacity onPress={()=> navigation.navigate('Login') }>
+      <Text style={styles.text2}>Login/Register</Text>
+      </TouchableOpacity>
+      
      </View>
-     <View>
-      <Text>Share App</Text>
-     </View>
-     <View>
-      <Text>Rate App</Text>
-     </View>
+     
     </View>
   )
 }
@@ -57,5 +58,16 @@ const styles = StyleSheet.create({
     width:'100%',
     justifyContent:'center'
   },
-
+  text:{
+    fontSize:18,
+    fontWeight:'700',
+    color:'black',
+    margin:7
+  },
+  text2:{
+    fontSize:18,
+    fontWeight:'700',
+    color:'blue',
+    margin:7
+  }
 })

@@ -31,21 +31,21 @@ const App = () => {
       key: 1,
       title: 'Global eNetworks Ltd.',
       text: 'fast and very trustable company by indian navy , army',
-      image: require('./src/asource/1.jpg'),
+      image: require('./src/asource/2.jpg'),
       backgroundColor: '#1c3857',
     },
     {
       key: 2,
       title: 'Now open to work for public sector ',
       text: 'We provides small services for offices and Homes ',
-      image: require('./src/asource/1.jpg'),
+      image: require('./src/asource/3.jpg'),
       backgroundColor: '#febe29',
     },
     {
       key: 3,
       title: 'Software / hardware Troubleshootings services',
       text: 'Now ready to solve your hardship ',
-      image: require('./src/asource/1.jpg'),
+      image: require('./src/asource/4.jpg'),
       backgroundColor: '#22bcb5',
     }
   ];
@@ -71,7 +71,7 @@ if(realshow){
   )
 }else{
   return(
-    <Main_application/>
+      <Main_application/>
   )
 }
  

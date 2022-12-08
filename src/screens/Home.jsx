@@ -26,7 +26,7 @@ const Home = ({navigation}) => {
       placeholder="Search"
       onChangeText={onChangeSearch}
       value={searchQuery}
-      
+      style={styles.searchbar}
     />
 
    
@@ -147,4 +147,10 @@ see:{
     marginBottom:15
     
 },
+searchbar:{
+  borderRadius:20,
+  marginHorizontal:5,
+  borderWidth:2,
+  borderColor:'blue',
+}
 })

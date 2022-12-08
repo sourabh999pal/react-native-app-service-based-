@@ -13,7 +13,7 @@ const Software = () => {
        showsVerticalScrollIndicator={false}
        style={{marginBottom:88}}
        >
-      <Servica name='Antivirus Installation' color='#1c3857' />
+      <Servica name='Antivirus Installation' color='#1c3857' price='500' />
       <Servica name='Windows Optimization' color='#9c2332' />
     </ScrollView>
     </>
