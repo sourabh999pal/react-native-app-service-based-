@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, TouchableOpacity, Image } from 'react-native';
 import React, { useState } from 'react';
 
 
@@ -13,12 +13,19 @@ const Login = ({ navigation }) => {
 
     return (
         <View>
-
+           <Image source={require('../asource/logo.png')} style={{
+              width:100,
+              height:100,
+              alignSelf:'center',
+              marginTop:20,
+        }} />
+        
+      
             <Text style={{
                 alignSelf: 'center',
                 fontSize: 20,
                 color: '#007AFF',
-                marginTop: 80,
+                marginTop: 20,
             }}>Login here!</Text>
             <View style={{
                 marginTop: 20
@@ -34,8 +41,10 @@ const Login = ({ navigation }) => {
                     style={styles.input}
                     placeholder='Password'
                     keyboardType='default'
+                    secureTextEntry={true}
                     onChangeText={setPassword}
                     value={password}
+                    maxLength={8}
                 />
             </View>
 

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, Image, View, TextInput, Button } from 'react-native';
 import React, { useState } from 'react';
 
 
@@ -10,7 +10,7 @@ const Register = ({navigation}) => {
     const [password, setPassword] = useState('');
 
     const Submit = () => {
-        fetch('http://192.168.83.1:5000/register',{
+        fetch('http://192.168.29.194:5000/register',{
             method:'post',
             headers:{
                 'Accept':'application/json',
@@ -30,7 +30,22 @@ const Register = ({navigation}) => {
           })
     }
     return (
-        <View>
+        <>
+        <Image source={require('../asource/logo.png')} style={{
+              width:100,
+              height:100,
+              alignSelf:'center',
+              marginTop:20,
+        }} />
+        
+        <Text style={{
+            fontSize:20,
+            fontWeight:'500',
+            alignSelf:'center',
+            marginTop:20
+        }} >Sign Up Here !</Text>
+
+        <View >
             <TextInput
                 style={styles.input}
                 placeholder='Name'
@@ -71,6 +86,7 @@ const Register = ({navigation}) => {
                 />
             </View>
         </View>
+        </>
     )
 }
 
